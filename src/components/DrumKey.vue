@@ -2,22 +2,24 @@
   <div class="key" :class="{playing}" @transitionend="revertTransition">
     <kbd>{{keyIdent}}</kbd>
     <span class="sound-description">{{soundDescription}}</span>
-    <audio :src="`static/sounds/${soundDescription}.wav`" ref="aud"></audio>
+    <audioplay :playing="playing" :src="`static/sounds/${soundDescription}.wav`"></audioplay>
   </div>
 </template>
 
 <script>
+import audioplay from "./AudioPlay";
+
 export default {
   name: 'drumkey',
+  components: {
+    audioplay
+  },
   data() {
     return {playing: false};
   },
   methods: {
     play() {
       this.playing = true;
-      let audio = this.$refs.aud;
-      audio.currentTime = 0;
-      audio.play();
     },
     revertTransition(a) {
       this.playing = false;
@@ -28,8 +30,8 @@ export default {
     soundDescription: { type: String, required: true },
   },
   computed: {
-    charCode() {
-      return this.keyIdent.charCodeAt() - 32;
+    keyCode() {
+      return this.keyIdent.charCodeAt();
     }
   },
 }

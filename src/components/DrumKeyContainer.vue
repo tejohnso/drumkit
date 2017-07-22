@@ -26,9 +26,9 @@ export default {
     }
   },
   created() {
-    window.addEventListener("keyup", (event)=>{
+    window.addEventListener("keypress", (event)=>{
       let instance = this.$refs.drumkeys
-      .find(instance=>instance.charCode === event.keyCode)
+      .find(instance=>instance.keyCode === event.keyCode)
 
       return instance && instance.play();
     });
@@ -38,6 +38,8 @@ export default {
 
 <style scoped>
 .key-container {
+  background-image: url("../../static/images/concert2.png");
+  background-size: cover;
   display: flex;
   flex: 1;
   min-height: 100vh;
