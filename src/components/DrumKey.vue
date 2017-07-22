@@ -1,5 +1,5 @@
 <template>
-  <div class="key" :class="{playing}" @transitionend="revertTransition">
+  <div class="key" @click="play" :class="{playing}" @transitionend="revertTransition">
     <kbd>{{keyIdent}}</kbd>
     <span class="sound-description">{{soundDescription}}</span>
     <audioplay :playing="playing" :src="`static/sounds/${soundDescription}.wav`"></audioplay>
