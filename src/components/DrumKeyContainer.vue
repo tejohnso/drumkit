@@ -42,6 +42,8 @@ export default {
   background-size: cover;
   display: flex;
   flex: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   min-height: 100vh;
   align-items: center;
   justify-content: center;

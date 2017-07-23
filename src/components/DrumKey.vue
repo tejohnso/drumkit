@@ -39,17 +39,23 @@ export default {
 
 <style scoped>
 .key {
-  border: .4rem solid black;
-  border-radius: .5rem;
-  margin: 1rem;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: auto;
   font-size: 1rem;
-  padding: 0.5rem .5rem;
   transition: all .07s ease;
   width: 5rem;
   text-align: center;
   color: white;
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
+}
+@media (min-width: 65rem) {
+  .key {
+    font-size: 3rem;
+    border: .4rem solid black;
+    border-radius: .5rem;
+  }
 }
 
 .playing {
@@ -60,13 +66,16 @@ export default {
 
 kbd {
   display: block;
-  font-size: 3rem;
 }
 
 .sound-description {
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 0.5rem;
   letter-spacing: .1rem;
   color: #ffc600;
+}
+@media (min-width: 40rem) {
+  .sound-description {
+    font-size: 1.5rem;
+  }
 }
 </style>
